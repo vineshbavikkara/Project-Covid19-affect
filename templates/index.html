@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Covid-19 Affect Prediction App</title>
+	<link rel="stylesheet" type="text/css" href="static/style.css">
+	<meta charset="utf-8">
+</head>
+<body>
+	<h1> Covid-19 Affect Prediction App </h1>
+	<div class="login">
+		<form action="{{url_for('predict')}}" method="post">
+			<label for="Industry_Type" >Industry Type : </label>
+				<select id="Industry_Type" name="Industry_Type">		
+		 			<option value="Manufacturing"> Manufacturing </option>
+		 			<option value="Retail"> Retail </option>
+		 			<option value="Other"> Other </option>
+		 		</select><br><br>
+
+		 	<label for="Current_Situation">Current Situation : </label>
+				<select id="Current_Situation" name="Current_Situation">		
+		 			<option value="Temporarily_Closed"> Temporarily Closed </option>
+		 			<option value="Open"> Open </option>
+		 		</select><br><br>
+
+			<label for="Direct_Export">Direct Export : </label>
+				<select id="Direct_Export" name="Direct_Export">		
+		 			<option value="Very_Low"> Very Low </option>
+		 			<option value="Low"> Low </option>
+		 			<option value="Medium"> Medium </option>
+		 			<option value="High"> High </option>
+		 			</select><br><br>
+
+		 	<label for="Indirect_Export">Indirect Export : </label>
+				<select id="Indirect_Export" name="Indirect_Export">		
+		 			<option value="Very_Low"> Very Low </option>
+		 			<option value="Low"> Low </option>
+		 			<option value="Medium"> Medium </option>
+		 			<option value="High"> High </option>
+		 			</select><br><br>
+
+		 	<label for="Hours_Worked_Per_Week">Hours Worked Per Week : </label>
+				<select id="Hours_Worked_Per_Week" name="Hours_Worked_Per_Week">		
+		 			<option value="Increase"> Increase </option>
+		 			<option value="Remain_the_Same"> Remain the Same </option>
+		 			<option value="Decrease"> Decrease </option>
+		 			</select><br><br>
+
+		 	<label for="Demand_For_Product">Demand For Product : </label>
+				<select id="Demand_For_Product" name="Demand_For_Product">		
+		 			<option value="Increase"> Increase </option>
+		 			<option value="Remain_the_Same"> Remain the Same </option>
+		 			<option value="Decrease"> Decrease </option>
+		 			</select><br><br>
+
+		 	<label for="Supply_Of_Raw_Materials">Supply of Raw Materials : </label>
+				<select id="Supply_Of_Raw_Materials" name="Supply_Of_Raw_Materials">		
+		 			<option value="Increase"> Increase </option>
+		 			<option value="Remain_the_Same"> Remain the Same </option>
+		 			<option value="Decrease"> Decrease </option>
+		 			</select><br><br>
+
+		 	<label for="Financial_Performance">Financial Performance : </label>
+				<select id="Financial_Performance" name="Financial_Performance">		
+		 			<option value="Increase"> Increase </option>
+		 			<option value="Remain_the_Same"> Remain the Same </option>
+		 			<option value="Decrease"> Decrease </option>
+		 			</select><br><br>
+
+		 	<label for="Online_Business">Online Business : </label>
+				<select id="RevLineCr_yes" name="RevLineCr_yes">		
+		 			<option value="Yes"> Yes </option>
+		 			<option value="No"> No </option>
+		 		</select><br><br>
+		 	<input type="reset" name="Reset">
+		 	<button type="submit" >Predict</button>
+			
+			<br><br><br>
+
+				<div class="preds"> {{ predicted }} </div>
+			</div>
+		
+	</div>
+
+</body>
+</html>
