@@ -27,8 +27,8 @@ def predict():
     pred = model.predict(response)
 
     if pred[0]==1:
-        return render_template("index.html",predicted="Not Affected")
-    return render_template("index.html",predicted="Affected")
+        return render_template("index.html",predicted="Covid-19 Does not Affect the Performance of Your Company.")
+    return render_template("index.html",predicted="Covid-19 Affected the Performance of Your Company.")
 
 if __name__=="__main__":
     app.run(debug=True)
